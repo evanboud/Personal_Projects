@@ -7,14 +7,14 @@ today = date.today()
 
 
 def get_next_session_ID(): 
-   
    if os.path.exists("poker.csv"):
     csv_session_df = pd.read_csv("poker.csv")
     return int(max(csv_session_df["Session ID"] + 1)) 
    else:
     return int(1)
 
-def session_retriever(x):
+#unsesscary
+#def session_retriever(x,session_data_frame):
     session_number = converter(input(x))
     session_pulled = session_data_frame.loc(session_number)
     print(session_pulled)
@@ -31,17 +31,27 @@ def converter(conversion, text):
            continue
 
 
-#creates the data fram that appends the CSV with session ID information 
+def log_session():
 
-session_data = [{"Session ID": get_next_session_ID(), "date": today, "Venue": input("Venue: "), "Stakes": input("Stakes: "), "Buy-in": converter(float, "Buy In: "), 
-                "Cashout": converter(float, "How much did you Cashout with? "), "Hours": converter(float, "Hours: "), "Hands Played": converter(int, "Hands Played "), "Decisions Priced": converter(int, "Decisions Priced "), 
-                "Decisions Total": converter(int, "Total Decisions "), "Tilt": input("Tilted Y/N "), "Tilt Trigger": input("Tilt Trigger "), "Planned Hours": input("Planned Hours "), 
-                "Notes": input("Additional Notes ")}]
-    
-  
+    session_ID = get_next_session_ID()
 
-session_data_frame = pd.DataFrame(session_data)
-session_data_frame.to_csv("poker.csv", header=False if os.path.exists("poker.csv") else True , mode="a", index=False)
+    session_data = [{"Session ID": session_ID, "date": today, "Venue": input("Venue: "), "Stakes": input("Stakes: "), "Buy-in": converter(float, "Buy In: "), 
+                    "Cashout": converter(float, "How much did you Cashout with? "), "Hours": converter(float, "Hours: "), "Hands Played": converter(int, "Hands Played "), "Decisions Priced": converter(int, "Decisions Priced "), 
+                    "Decisions Total": converter(int, "Total Decisions "), "Tilt": input("Tilted Y/N "), "Tilt Trigger": input("Tilt Trigger "), "Planned Hours": input("Planned Hours "), 
+                    "Notes": input("Additional Notes ")}]    
+
+    session_data_frame = pd.DataFrame(session_data)
+    session_data_frame.to_csv("poker.csv", header=False if os.path.exists("poker.csv") else True , mode="a", index=False)   
+
+    return session_ID
+
+def main():
+   log_session()
+
+
+if __name__ == "__main__":
+   main()
+
 
 
 #read the CSV File
