@@ -13,12 +13,8 @@ def get_next_session_ID():
    else:
     return int(1)
 
-#unsesscary
-#def session_retriever(x,session_data_frame):
-    session_number = converter(input(x))
-    session_pulled = session_data_frame.loc(session_number)
-    print(session_pulled)
-                          
+session_ID = get_next_session_ID()
+
 
 def converter(conversion, text):
     while True:
@@ -26,14 +22,15 @@ def converter(conversion, text):
             str_input = input(text)
             convert1= conversion(str_input)
             return convert1  
+
         except ValueError:
-           print("Not a Valid In")
+           print("Not a Valid Input")
            continue
 
 
 def log_session():
 
-    session_ID = get_next_session_ID()
+    
 
     session_data = [{"Session ID": session_ID, "date": today, "Venue": input("Venue: "), "Stakes": input("Stakes: "), "Buy-in": converter(float, "Buy In: "), 
                     "Cashout": converter(float, "How much did you Cashout with? "), "Hours": converter(float, "Hours: "), "Hands Played": converter(int, "Hands Played "), "Decisions Priced": converter(int, "Decisions Priced "), 
@@ -41,10 +38,9 @@ def log_session():
                     "Notes": input("Additional Notes ")}]    
 
     session_data_frame = pd.DataFrame(session_data)
-    session_data_frame.to_csv("poker.csv", header=False if os.path.exists("poker.csv") else True , mode="a", index=False)   
+    session_data_frame.to_csv("poker.csv", header=False if os.path.exists("poker.csv") else True , mode="a", index=False)
 
-    return session_ID
-
+    
 def main():
    log_session()
 
