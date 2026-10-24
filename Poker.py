@@ -42,7 +42,9 @@ def log_session():
 
     
 def main():
-   log_session()
+   while True:
+     log_session()
+     
 
 
 if __name__ == "__main__":

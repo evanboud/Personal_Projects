@@ -25,17 +25,47 @@ def session_id_generator():
                   print("Input Not a Integer")
                   continue
                 
+def hand_id_generator():
+    if os.path.exists("hands.csv"):
+      hands_session_df = pd.read_csv("hands.csv)")
+      return int(max(hands_session_df["Session ID"] + 1))
+    return int(1)
 
+def position_func():
+   while True:
+         position = input("Posiitons? (BTN/SB/BB/EP/LP): ")
+         if position in ["BTN","SB","BB","EP","LP"]:
+            return position
+         print("Not Valid Position")
+         continue
 
-      
-print(session_id_generator())
-   
+def my_bet():
+    return converter(float, "My Bet: ")
+def bet_faced_func():
+    return converter(float, "Bet Faced ")
+def pot_size_func():
+    return converter(float, "Pot Size: ")
+def pot_odds_calculator(bet, bet_faced, pot_size):
+   return bet / (bet_faced + pot_size)
+    
+    
+    
 
-
+        
+log_function_session_id = session_id_generator()
+position = position_func()
 
 def log_hand():
-
-    hand_data = [{"Session ID": "filler", "hand ID": "filler"}]    
+    hand_id = hand_id_generator()
+    bet = my_bet()
+    bet_faced = bet_faced_func()
+    pot_size = pot_size_func()
+    pot_odds = pot_odds_calculator()
+    
+    hand_data = [{"session_id": log_function_session_id, "hand_id": hand_id, "position": position, "hole_cards": input("Hole Cards: "), "board": input("Board: " ),
+                  "street": input("Street (Where Was the difficult decison made ?): "), "pot_size": pot_size, "bet_faced": bet_faced, "my_bet": bet, "pot_odds": pot_odds,
+                  "equity_estimate": converter(float, "Equity Estimate: " ), "equity_actual": converter(float, "Actual Equity: "), "action_taken": input("Action Taken (Fold/Call/Raise/Sizing): "),
+                  "action_correct": converter(bool, )}]    
 
     hand_data_frame = pd.DataFrame(hand_data)
     hand_data_frame.to_csv("hands.csv", header=False if os.path.exists("hands.csv") else True , mode="a", index=False)   

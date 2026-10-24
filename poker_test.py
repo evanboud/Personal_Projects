@@ -1,2 +1,1 @@
-x = input("Input: ")
-print (x)
+import antigravity
