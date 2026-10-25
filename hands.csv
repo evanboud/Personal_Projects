@@ -1,15 +1,5 @@
-Session ID,hand ID
-filler,filler
-filler,filler
-filler,filler
-filler,filler
-filler,filler
-filler,filler
-filler,filler
-filler,filler
-filler,filler
-filler,filler
-filler,filler
-filler,filler
-filler,filler
-filler,filler
+session_id,hand_id,position,hole_cards,board,street,pot_size,bet_faced,my_bet,pot_odds,equity_estimate,equity_actual,action_taken,action_correct,error_type,lesson
+5,1,btn,a,a,a,2.0,2.0,10.0,0.7142857142857143,10.0,10.0,10,10,10,10
+5,2,btn,ak,akakak,,23.0,2.0,2.0,0.07407407407407407,10.0,10.0,fold,yrs,fdkfa,fkd
+5,3,btn,ak,adfas,,1.0,1.0,1.0,0.3333333333333333,10.0,10.0,fold,yes,no,d
+5,4,btn,10,10,10,1.0,10.0,10.0,0.47619047619047616,10.0,10.0,10,10,10,10
