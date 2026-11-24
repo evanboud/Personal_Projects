@@ -1,5 +1,9 @@
 session_id,hand_id,position,hole_cards,board,street,pot_size,bet_faced,my_bet,pot_odds,equity_estimate,equity_actual,action_taken,action_correct,error_type,lesson
-5,1,btn,a,a,a,2.0,2.0,10.0,0.7142857142857143,10.0,10.0,10,10,10,10
-5,2,btn,ak,akakak,,23.0,2.0,2.0,0.07407407407407407,10.0,10.0,fold,yrs,fdkfa,fkd
-5,3,btn,ak,adfas,,1.0,1.0,1.0,0.3333333333333333,10.0,10.0,fold,yes,no,d
-5,4,btn,10,10,10,1.0,10.0,10.0,0.47619047619047616,10.0,10.0,10,10,10,10
+1,1,btn,AhKd,Qs7c2d,flop,10,10,10,0.3333333333333333,0.40,0.35,call,y,,
+1,2,co,9s9h,Kd8c3s,flop,20,10,10,0.25,0.30,0.40,fold,n,fold-too-tight,price was fine
+2,1,sb,QcJc,Td5h2c,flop,30,10,10,0.2,0.50,0.45,call,y,,
+2,2,bb,7d7s,Ah9d4c,flop,10,5,5,0.25,0.20,0.30,call,n,bad-call,no price
+3,1,btn,AsQs,Jh6c2s,flop,10,10,10,0.3333333333333333,0.45,0.40,call,y,,
+3,2,co,KdKc,Ac8h3d,flop,20,10,10,0.25,0.35,0.35,call,y,,
+4,1,utg,5h4h,Kc9d2s,flop,10,10,10,0.3333333333333333,0.15,0.20,fold,y,,
+5,1,bb,JcTs,Qh9h3c,flop,20,10,10,0.25,0.30,0.20,call,n,bad-call,overrated draw

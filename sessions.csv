@@ -1,0 +1,6 @@
+Session ID, date      , Venue, Stakes, Buy-in, Cashout, Hours, Hands Played, Decisions Priced, Decisions Total, Tilt, Tilt Trigger, Planned Hours, Notes
+1,2026-11-10,1,1,100,150,2.0,40,8,10,N,,2.0,
+2,2026-11-11,1,1,100,60,1.5,30,5,10,Y,bad beat,2.0,
+3,2026-11-12,2,1,100,100,3.0,60,10,20,N,,3.0,
+4,2026-11-13,1,1,100,180,1.0,25,6,8,N,,1.0,
+5,2026-11-14,2,1,100,40,2.5,50,3,10,Y,losing streak,3.0,

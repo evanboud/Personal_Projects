@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 from datetime import date
-from Poker import converter
+from session import converter
 
 today = date.today()
 
@@ -40,6 +40,16 @@ def position_func():
          print("Not Valid Position")
          continue
 
+def yes_no(text):
+    while True:
+      x = input(text).lower().strip()
+      if x in ["y","n"]:
+         return x 
+      continue
+    
+    
+    
+
 def pot_odds_calculator(bet, bet_faced, pot_size):
    return bet / (bet + bet_faced + pot_size)
          
@@ -56,7 +66,7 @@ def log_hand(log_function_session_id):
     hand_data = [{"session_id": log_function_session_id, "hand_id": hand_id, "position": position, "hole_cards": input("Hole Cards: "), "board": input("Board: " ),
                   "street": input("Street (Where Was the difficult decison made ?): "), "pot_size": pot_size, "bet_faced": bet_faced, "my_bet": bet, "pot_odds": pot_odds,
                   "equity_estimate": converter(float, "Equity Estimate: " ), "equity_actual": converter(float, "Actual Equity: "), "action_taken": input("Action Taken (Fold/Call/Raise/Sizing): "),
-                  "action_correct": input("Action Correct (Yes/No)"), "error_type": input("Error Type:" ), "lesson": input("Lesson Learned: ")}]    
+                  "action_correct": yes_no("Action Correct (y/n) ") , "error_type": input("Error Type:" ), "lesson": input("Lesson Learned: ")}]    
 
     hand_data_frame = pd.DataFrame(hand_data)
     hand_data_frame.to_csv("hands.csv", header=False if os.path.exists("hands.csv") else True , mode="a", index=False)   

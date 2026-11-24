@@ -33,7 +33,7 @@ def log_session():
     
 
     session_data = [{"Session ID": session_ID, "date": today, "Venue": input("Venue: "), "Stakes": input("Stakes: "), "Buy-in": converter(float, "Buy In: "), 
-                    "Cashout": converter(float, "How much did you Cashout with? "), "Hours": converter(float, "Hours: "), "Hands Played": converter(int, "Hands Played "), "Decisions Priced": converter(int, "Decisions Priced "), 
+                    "Cashout": converter(float, "How much did you Cashout with? "), "Hours": converter(float, "Hours: "), "Hands Played": converter(int, "Hands Played "),"Decisions Priced": converter(int, "Decisions Priced "),
                     "Decisions Total": converter(int, "Total Decisions "), "Tilt": input("Tilted Y/N "), "Tilt Trigger": input("Tilt Trigger "), "Planned Hours": input("Planned Hours "), 
                     "Notes": input("Additional Notes ")}]    
 
